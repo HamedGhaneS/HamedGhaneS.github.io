@@ -13,11 +13,28 @@
       h1, h2 {
         text-align: center;
       }
-      img {
-        max-width: 50%; /* Shrinks the image to half the page width */
-        height: auto; /* Maintains the aspect ratio */
-        display: block;
-        margin: 0 auto; /* Centers the image */
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+        gap: 15px;
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        border: 2px solid #ddd;
+      }
+      .image-grid img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .image-grid img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
       }
       .collapsible {
         background-color: #f1f1f1;
@@ -50,13 +67,15 @@
       <h3>Neuroscientist | Control Engineer | AI Enthusiast</h3>
     </div>
 
-    <div align="center">
-      <img src="https://github.com/HamedGhaneS/HamedGhaneS/raw/main/Cover.webp" alt="Cover Image">
+    <!-- Start of Image Grid -->
+    <h2 style="text-align: center;">My Personal Board</h2>
+    <div class="image-grid">
+      <img src="https://github.com/HamedGhaneS/HamedGhaneS.github.io/blob/main/Hamedd.jpg" alt="Once Upon a Time in Barcelona - Hamed Ghane">
+      <img src="https://github.com/HamedGhaneS/HamedGhaneS.github.io/blob/main/AI_Gen.jpg" alt="">
+      <img src="https://github.com/HamedGhaneS/HamedGhaneS.github.io/blob/main/Hamedd1.jpg" alt="Glasgow Vibe">
+      <img src="https://github.com/HamedGhaneS/HamedGhaneS.github.io/blob/main/Poem.png" alt="">
     </div>
-
-    <div align="center">
-      <i>AI-generated image (GPT-4o)</i>
-    </div>
+    <!-- End of Image Grid -->
 
     <button class="collapsible">🧠 About Me</button>
     <div class="content">
@@ -96,10 +115,10 @@
     <div class="content">
       <ul>
         <li>📧 Email:</li>
-          <ul>
-            <li>Academic: <a href="mailto:Hamed.ghanesasansaraei@Glasgow.ac.uk">Hamed.ghanesasansaraei@Glasgow.ac.uk</a></li>
-            <li>Personal: <a href="mailto:hmd.ghane.s@gmail.com">hmd.ghane.s@gmail.com</a></li>
-          </ul>
+        <ul>
+          <li>Academic: <a href="mailto:Hamed.ghanesasansaraei@Glasgow.ac.uk">Hamed.ghanesasansaraei@Glasgow.ac.uk</a></li>
+          <li>Personal: <a href="mailto:hmd.ghane.s@gmail.com">hmd.ghane.s@gmail.com</a></li>
+        </ul>
         <li>🔗 <a href="https://www.linkedin.com/in/hamedghane" target="_blank">LinkedIn</a></li>
         <li>🐙 <a href="https://github.com/HamedGhaneS" target="_blank">GitHub</a></li>
         <li>📖 <a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei" target="_blank">Academic Profile</a></li>
