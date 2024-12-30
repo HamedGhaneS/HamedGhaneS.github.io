@@ -2,7 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My GitHub Homepage</title>
+    <title>Hamed Ghane's Personal Website</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      h1, h2 {
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+      .collapsible {
+        background-color: #f1f1f1;
+        color: #444;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 18px;
+        transition: background-color 0.3s;
+      }
+      .collapsible:hover {
+        background-color: #ddd;
+      }
+      .content {
+        padding: 0 15px;
+        display: none;
+        overflow: hidden;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
     <div align="center">
@@ -18,50 +58,61 @@
       <i>AI-generated image (GPT-4o)</i>
     </div>
 
-    <h2>🧠 About Me</h2>
-    <p>I'm a Postdoctoral Researcher at the University of Glasgow, working at the intersection of neuroscience, control engineering, and artificial intelligence. My journey uniquely combines over a decade of experience in Control Engineering with a deep fascination for understanding the human brain and cognitive mechanisms.</p>
-    <ul>
-      <li>🔬 Currently developing BCI systems using EEG, EMG, and ECG to study sensorimotor decision-making</li>
-      <li>🎓 PhD in Control Engineering with expertise in nonlinear dynamics</li>
-      <li>📚 Second master in Brain and Cognition</li>
-      <li>📚 Active researcher in neurotechnology and AI</li>
-      <li>💡 Fascinated by Language Models and their cognitive implications</li>
-    </ul>
+    <button class="collapsible">🧠 About Me</button>
+    <div class="content">
+      <p>I'm a Postdoctoral Researcher at the University of Glasgow, working at the intersection of neuroscience, control engineering, and artificial intelligence. My journey uniquely combines over a decade of experience in Control Engineering with a deep fascination for understanding the human brain and cognitive mechanisms.</p>
+      <ul>
+        <li>🔬 Currently developing BCI systems using EEG, EMG, and ECG to study sensorimotor decision-making</li>
+        <li>🎓 PhD in Control Engineering with expertise in nonlinear dynamics</li>
+        <li>📚 Second master in Brain and Cognition</li>
+        <li>📚 Active researcher in neurotechnology and AI</li>
+        <li>💡 Fascinated by Language Models and their cognitive implications</li>
+      </ul>
+    </div>
 
-    <h2>🛠️ Technical Stack</h2>
-    <ul>
-      <li><b>Programming:</b> Python, MATLAB</li>
-      <li><b>Neural Data Analysis:</b> EEG, EMG, ECG</li>
-      <li><b>Machine Learning & AI:</b> Deep Learning, Computational Intelligence, NLP</li>
-      <li><b>Control Systems:</b> Nonlinear Control, System Analysis and Optimization</li>
-      <li><b>Data Analysis:</b> Statistical Analysis, Data Mining</li>
-      <li><b>Tools & Technologies:</b> Brain-Computer Interfaces, EEG-ECG-EMG Recording</li>
-    </ul>
+    <button class="collapsible">🛠️ Technical Stack</button>
+    <div class="content">
+      <ul>
+        <li><b>Programming:</b> Python, MATLAB</li>
+        <li><b>Neural Data Analysis:</b> EEG, EMG, ECG</li>
+        <li><b>Machine Learning & AI:</b> Deep Learning, Computational Intelligence, NLP</li>
+        <li><b>Control Systems:</b> Nonlinear Control, System Analysis and Optimization</li>
+        <li><b>Data Analysis:</b> Statistical Analysis, Data Mining</li>
+        <li><b>Tools & Technologies:</b> Brain-Computer Interfaces, EEG-ECG-EMG Recording</li>
+      </ul>
+    </div>
 
-    <h2>🎯 Research Focus</h2>
-    <ul>
-      <li>Brain-Computer Interfaces (BCI)</li>
-      <li>Neurotechnology</li>
-      <li>Computational Neuroscience</li>
-      <li>Control Theory Applications in Neuroscience</li>
-      <li>LLM</li>
-      <li>AI-Enhanced Neural Data Analysis</li>
-      <li>Human-Inspired AI Development</li>
-      <li>Decision-Making</li>
-    </ul>
+    <button class="collapsible">🌟 Career Highlights</button>
+    <div class="content">
+      <ul>
+        <li>Senior Postdoctoral Researcher at University of Glasgow</li>
+        <li>Former Assistant Professor specializing in Control Engineering</li>
+        <li>Research experience at University of Groningen</li>
+        <li>Led the development of attitude determination and control systems for satellite projects</li>
+      </ul>
+    </div>
 
-    <h2>🌟 Career Highlights</h2>
-    <ul>
-      <li>Senior Postdoctoral Researcher at University of Glasgow</li>
-      <li>Former Assistant Professor specializing in Control Engineering</li>
-      <li>Research experience at University of Groningen</li>
-      <li>Led the development of attitude determination and control systems for satellite projects</li>
-    </ul>
+    <button class="collapsible">📫 Connect With Me</button>
+    <div class="content">
+      <ul>
+        <li>📧 Email: hmd.ghane.s@gmail.com</li>
+        <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/hamedghane" target="_blank">www.linkedin.com/in/hamedghane</a></li>
+      </ul>
+    </div>
 
-    <h2>📫 Connect With Me</h2>
-    <ul>
-      <li>📧 Email: hmd.ghane.s@gmail.com</li>
-      <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/hamedghane">www.linkedin.com/in/hamedghane</a></li>
-    </ul>
+    <script>
+      const collapsibles = document.querySelectorAll('.collapsible');
+      collapsibles.forEach((collapsible) => {
+        collapsible.addEventListener('click', function () {
+          this.classList.toggle('active');
+          const content = this.nextElementSibling;
+          if (content.style.display === 'block') {
+            content.style.display = 'none';
+          } else {
+            content.style.display = 'block';
+          }
+        });
+      });
+    </script>
   </body>
 </html>
