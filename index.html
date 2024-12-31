@@ -48,6 +48,29 @@
         transform: scale(1.05);
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
       }
+      .collapsible {
+        background-color: #f1f1f1;
+        color: #444;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 18px;
+        transition: background-color 0.3s;
+      }
+      .collapsible:hover {
+        background-color: #ddd;
+      }
+      .content {
+        padding: 0 15px;
+        display: none;
+        overflow: hidden;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
@@ -78,6 +101,54 @@
       <img src="https://raw.githubusercontent.com/HamedGhaneS/HamedGhaneS/main/Cover.webp" alt="Cover Image">
     </div>
     -->
+
+    <button class="collapsible">🧠 About Me</button>
+    <div class="content">
+      <p>I'm a Postdoctoral Researcher at the University of Glasgow, working at the intersection of neuroscience, control engineering, and artificial intelligence. My journey uniquely combines over a decade of experience in Control Engineering with a deep fascination for understanding the human brain and cognitive mechanisms.</p>
+      <ul>
+        <li>🔬 Currently developing BCI systems using EEG, EMG, and ECG to study sensorimotor decision-making</li>
+        <li>🎓 PhD in Control Engineering with expertise in nonlinear dynamics</li>
+        <li>📚 Second master in Brain and Cognition</li>
+        <li>📚 Active researcher in neurotechnology and AI</li>
+        <li>💡 Fascinated by Language Models and their cognitive implications</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">🛠️ Technical Stack</button>
+    <div class="content">
+      <ul>
+        <li><b>Programming:</b> Python, MATLAB</li>
+        <li><b>Neural Data Analysis:</b> EEG, EMG, ECG</li>
+        <li><b>Machine Learning & AI:</b> Deep Learning, Computational Intelligence, NLP</li>
+        <li><b>Control Systems:</b> Nonlinear Control, System Analysis and Optimization</li>
+        <li><b>Data Analysis:</b> Statistical Analysis, Data Mining</li>
+        <li><b>Tools & Technologies:</b> Brain-Computer Interfaces, EEG-ECG-EMG Recording</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">🌟 Career Highlights</button>
+    <div class="content">
+      <ul>
+        <li>Senior Postdoctoral Researcher at University of Glasgow</li>
+        <li>Former Assistant Professor specializing in Control Engineering</li>
+        <li>Research experience at University of Groningen</li>
+        <li>Led the development of attitude determination and control systems for satellite projects</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">📫 Connect With Me</button>
+    <div class="content">
+      <ul>
+        <li>📧 Email:</li>
+        <ul>
+          <li>Academic: <a href="mailto:Hamed.ghanesasansaraei@Glasgow.ac.uk">Hamed.ghanesasansaraei@Glasgow.ac.uk</a></li>
+          <li>Personal: <a href="mailto:hmd.ghane.s@gmail.com">hmd.ghane.s@gmail.com</a></li>
+        </ul>
+        <li>🔗 <a href="https://www.linkedin.com/in/hamedghane" target="_blank">LinkedIn</a></li>
+        <li>🐙 <a href="https://github.com/HamedGhaneS" target="_blank">GitHub</a></li>
+        <li>📖 <a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei" target="_blank">Academic Profile</a></li>
+      </ul>
+    </div>
 
     <script>
       const collapsibles = document.querySelectorAll('.collapsible');
