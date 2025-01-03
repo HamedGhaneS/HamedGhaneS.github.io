@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Hamed Ghane's Personal Website </title>
+    <title>Hamed Ghane's Personal Website</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -72,6 +72,46 @@
         margin-bottom: 20px;
         font-size: 1.8rem;
       }
+      .read-more-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+      .read-more-btn {
+        background: none;
+        border: none;
+        color: #007BFF;
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 10px 0;
+        text-decoration: underline;
+      }
+      .read-more-content {
+        display: none;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+      .read-more-content.show {
+        display: block;
+      }
+      .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .expertise-card {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .expertise-card h3 {
+        color: #007BFF;
+        margin-bottom: 10px;
+      }
       ul {
         list-style: none;
         padding: 0;
@@ -121,9 +161,36 @@
     <div id="about" class="section">
       <h2>About Me</h2>
       <p>
-        I'm a Postdoctoral Researcher at the University of Glasgow, working at the intersection of neuroscience, control engineering, and artificial intelligence. 
-        With over a decade of experience in Control Engineering, I transitioned into neuroscience to explore how technology can enhance our understanding of the human brain.
+        At the intersection of mathematics, control systems, and neuroscience, I bring a unique perspective to artificial intelligence and human cognition. After a decade as an Assistant Professor in Control Engineering, my fascination with the human brain led me to transition into neuroscience, where I now conduct postdoctoral research at the University of Glasgow.
       </p>
+      
+      <div class="read-more-container">
+        <button class="read-more-btn" onclick="toggleReadMore()">Read More About My Journey</button>
+        <div class="read-more-content" id="more-content">
+          <div class="expertise-grid">
+            <div class="expertise-card">
+              <h3>Mathematical Foundation</h3>
+              <p>My expertise in linear and nonlinear algebra provides deep insights into the mathematical structures powering modern AI and large language models. This foundation enables me to approach both artificial and biological intelligence from a rigorous analytical perspective.</p>
+            </div>
+            
+            <div class="expertise-card">
+              <h3>Systems Expertise</h3>
+              <p>Years of research in control engineering have given me mastery in system modeling and analysis, skills that are crucial for understanding complex neural networks and developing advanced AI systems.</p>
+            </div>
+            
+            <div class="expertise-card">
+              <h3>Current Research</h3>
+              <p>At Glasgow, I develop brain-computer interfaces using EEG and fMRI to study human decision-making, applying my mathematical background to understand how our brains process information—insights crucial for advancing both neurotechnology and AI.</p>
+            </div>
+            
+            <div class="expertise-card">
+              <h3>Future Vision</h3>
+              <p>I'm particularly excited about applying my expertise to next-generation AI systems, especially large language models. By bridging control theory, neuroscience, and AI, I aim to create more sophisticated and interpretable systems that better mirror human cognitive processes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <ul>
         <li>🔬 Currently developing BCI systems using EEG, EMG, and ECG to study sensorimotor decision-making.</li>
         <li>🎓 PhD in Control Engineering with expertise in nonlinear dynamics.</li>
@@ -164,5 +231,14 @@
     <footer>
       <p>&copy; 2024 Hamed Ghane | <a href="#contact">Contact</a></p>
     </footer>
+
+    <script>
+      function toggleReadMore() {
+        const content = document.getElementById('more-content');
+        content.classList.toggle('show');
+        const btn = document.querySelector('.read-more-btn');
+        btn.textContent = content.classList.contains('show') ? 'Read Less' : 'Read More About My Journey';
+      }
+    </script>
   </body>
 </html>
