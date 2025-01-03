@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Hamed Ghane's Personal Website</title>
     <style>
+      /* Base styles */
       body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
@@ -14,6 +15,8 @@
       h1, h2 {
         text-align: center;
       }
+      
+      /* Navigation styling */
       nav {
         background-color: #007BFF;
         padding: 10px 0;
@@ -29,6 +32,8 @@
       nav a:hover {
         text-decoration: underline;
       }
+      
+      /* Hero section styling */
       .hero {
         text-align: center;
         padding: 50px 20px;
@@ -62,6 +67,8 @@
       .hero a:hover {
         background-color: #0056b3;
       }
+      
+      /* Section styling */
       .section {
         padding: 40px 20px;
       }
@@ -72,6 +79,8 @@
         margin-bottom: 20px;
         font-size: 1.8rem;
       }
+      
+      /* Read more section styling */
       .read-more-container {
         max-width: 800px;
         margin: 20px auto;
@@ -96,6 +105,8 @@
       .read-more-content.show {
         display: block;
       }
+      
+      /* Expertise cards styling */
       .expertise-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -107,11 +118,28 @@
         padding: 20px;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease;
+      }
+      .expertise-card:hover {
+        transform: translateY(-5px);
       }
       .expertise-card h3 {
         color: #007BFF;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #007BFF;
+        padding-bottom: 8px;
       }
+      .expertise-card ul {
+        margin-top: 15px;
+        padding-left: 20px;
+      }
+      .expertise-card ul li {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        color: #555;
+      }
+      
+      /* General list styling */
       ul {
         list-style: none;
         padding: 0;
@@ -123,6 +151,8 @@
       ul li b {
         color: #007BFF;
       }
+      
+      /* Footer styling */
       footer {
         background-color: #333;
         color: white;
@@ -169,23 +199,43 @@
         <div class="read-more-content" id="more-content">
           <div class="expertise-grid">
             <div class="expertise-card">
-              <h3>Mathematical Foundation</h3>
-              <p>My expertise in linear and nonlinear algebra provides deep insights into the mathematical structures powering modern AI and large language models. This foundation enables me to approach both artificial and biological intelligence from a rigorous analytical perspective.</p>
+              <h3>Research Journey</h3>
+              <p>My path from control engineering to neuroscience reflects a natural evolution in understanding complex systems. Starting with spacecraft control systems at AISRC, I progressed to researching chaotic dynamical systems at the Bernoulli Institute, ultimately leading to my current work in computational neuroscience at the University of Glasgow.</p>
+              <ul class="career-highlights">
+                <li>🎓 Transitioned from Control Engineering Professor to Neuroscience Research</li>
+                <li>🛰️ Led satellite control system development</li>
+                <li>🧠 Pioneered BCI research combining control theory with neuroscience</li>
+              </ul>
             </div>
             
             <div class="expertise-card">
-              <h3>Systems Expertise</h3>
-              <p>Years of research in control engineering have given me mastery in system modeling and analysis, skills that are crucial for understanding complex neural networks and developing advanced AI systems.</p>
+              <h3>Mathematical & Technical Expertise</h3>
+              <p>My foundation in linear and nonlinear algebra, combined with extensive experience in system modeling, provides unique insights into both neural networks and AI systems. This mathematical rigor enriches my approach to neuroscience research and AI development.</p>
+              <ul class="technical-skills">
+                <li>📊 Advanced mathematical modeling and analysis</li>
+                <li>💻 Proficient in Python, MATLAB for neural data analysis</li>
+                <li>🔧 Expert in BCI system design and implementation</li>
+              </ul>
             </div>
             
             <div class="expertise-card">
-              <h3>Current Research</h3>
-              <p>At Glasgow, I develop brain-computer interfaces using EEG and fMRI to study human decision-making, applying my mathematical background to understand how our brains process information—insights crucial for advancing both neurotechnology and AI.</p>
+              <h3>Current Research Focus</h3>
+              <p>At the University of Glasgow, I integrate control theory with neuroscience, developing sophisticated BCI systems using EEG, EMG, and fMRI. My research focuses on understanding human decision-making processes through computational modeling and AI-enhanced analysis.</p>
+              <ul class="research-areas">
+                <li>🧪 Sensorimotor decision-making analysis</li>
+                <li>🤖 AI-enhanced neurological data processing</li>
+                <li>🔬 Real-time BCI system development</li>
+              </ul>
             </div>
             
             <div class="expertise-card">
-              <h3>Future Vision</h3>
-              <p>I'm particularly excited about applying my expertise to next-generation AI systems, especially large language models. By bridging control theory, neuroscience, and AI, I aim to create more sophisticated and interpretable systems that better mirror human cognitive processes.</p>
+              <h3>Leadership & Innovation</h3>
+              <p>Throughout my career, I've demonstrated strong leadership in both academic and research settings. From managing satellite projects to supervising graduate research, I combine technical expertise with effective team leadership to drive innovative solutions.</p>
+              <ul class="achievements">
+                <li>👥 Extensive experience in project and team management</li>
+                <li>🎯 Track record of successful research project delivery</li>
+                <li>🌟 Recognized for teaching and research excellence</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -232,6 +282,7 @@
       <p>&copy; 2024 Hamed Ghane | <a href="#contact">Contact</a></p>
     </footer>
 
+    <!-- JavaScript for Read More functionality -->
     <script>
       function toggleReadMore() {
         const content = document.getElementById('more-content');
