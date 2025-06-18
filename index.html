@@ -1,304 +1,270 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hamed Ghane's Personal Website</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamed Ghane</title>
     <style>
-      /* Base styles */
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        color: #333;
-      }
-      h1, h2 {
-        text-align: center;
-      }
-      
-      /* Navigation styling */
-      nav {
-        background-color: #007BFF;
-        padding: 10px 0;
-        text-align: center;
-      }
-      nav a {
-        color: white;
-        margin: 0 15px;
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: bold;
-      }
-      nav a:hover {
-        text-decoration: underline;
-      }
-      
-      /* Hero section styling */
-      .hero {
-        text-align: center;
-        padding: 50px 20px;
-        background-color: #f9f9f9;
-      }
-      .hero img {
-        width: 250px;
-        height: 300px;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 4px 6px rgba(0, 0, 0.1, 0.1);
-      }
-      .hero h1 {
-        margin-top: 20px;
-        font-size: 2rem;
-      }
-      .hero p {
-        max-width: 600px;
-        margin: 10px auto;
-        font-size: 1.2rem;
-        color: #555;
-      }
-      .hero a {
-        text-decoration: none;
-        color: white;
-        background-color: #007BFF;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-size: 1rem;
-      }
-      .hero a:hover {
-        background-color: #0056b3;
-      }
-      
-      /* Section styling */
-      .section {
-        padding: 40px 20px;
-      }
-      .section:nth-child(even) {
-        background-color: #f2f2f2;
-      }
-      .section h2 {
-        margin-bottom: 20px;
-        font-size: 1.8rem;
-      }
-      
-      /* Read more section styling */
-      .read-more-container {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 0 20px;
-      }
-      .read-more-btn {
-        background: none;
-        border: none;
-        color: #007BFF;
-        cursor: pointer;
-        font-size: 1rem;
-        padding: 10px 0;
-        text-decoration: underline;
-      }
-      .read-more-content {
-        display: none;
-        padding: 20px;
-        background: #f9f9f9;
-        border-radius: 5px;
-        margin-top: 15px;
-      }
-      .read-more-content.show {
-        display: block;
-      }
-      
-      /* Expertise cards styling */
-      .expertise-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-      }
-      .expertise-card {
-        background: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        transition: transform 0.2s ease;
-      }
-      .expertise-card:hover {
-        transform: translateY(-5px);
-      }
-      .expertise-card h3 {
-        color: #007BFF;
-        margin-bottom: 15px;
-        border-bottom: 2px solid #007BFF;
-        padding-bottom: 8px;
-      }
-      .expertise-card ul {
-        margin-top: 15px;
-        padding-left: 20px;
-      }
-      .expertise-card ul li {
-        font-size: 0.9rem;
-        margin-bottom: 8px;
-        color: #555;
-      }
-      
-      /* General list styling */
-      ul {
-        list-style: none;
-        padding: 0;
-      }
-      ul li {
-        margin-bottom: 10px;
-        font-size: 1rem;
-      }
-      ul li b {
-        color: #007BFF;
-      }
-      
-      /* Footer styling */
-      footer {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        font-size: 0.9rem;
-      }
-      footer a {
-        color: #007BFF;
-        text-decoration: none;
-      }
-      footer a:hover {
-        text-decoration: underline;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background-color: #fdfdfd;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        /* Main content */
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            text-align: justify;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .expertise-item {
+            padding: 20px 0;
+        }
+
+        .expertise-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .expertise-item p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Skills list */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .skill-tag {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #e9ecef;
+        }
+
+        /* Contact */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Quote */
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #888;
+            margin-top: 80px;
+            font-size: 1rem;
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <a href="#about">About Me</a>
-      <a href="#stack">Technical Stack</a>
-      <a href="#contact">Contact</a>
-    </nav>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://raw.githubusercontent.com/HamedGhaneS/HamedGhaneS.github.io/main/Hamedd.jpg" 
+                 alt="Hamed Ghane" class="profile-image">
+            <h1>Hamed Ghane</h1>
+            <p class="subtitle">Neuroscientist • Control Engineer • AI Researcher</p>
+        </header>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <img 
-        src="https://raw.githubusercontent.com/HamedGhaneS/HamedGhaneS.github.io/main/Hamedd.jpg" 
-        alt="Profile Image of Hamed Ghane">
-      <h1>Hello, I'm Hamed Ghane</h1>
-      <p>A neuroscientist and control engineer exploring the intersection of technology, neuroscience, and AI.</p>
-      <a href="#contact">Connect with Me</a>
-    </div>
+        <!-- Introduction -->
+        <section class="intro">
+            <p>My name is Hamed, I am a neuroscientist with a PhD in Control Engineering. I am driven by understanding how the brain works and building intelligent systems that bridge neuroscience and artificial intelligence. Brain-computer interfaces have been the main focus of my research in the last few years, combining real-time neural signal processing with adaptive control systems to create technologies that enhance human capabilities.</p>
+            
+            <p>Currently, I am a <strong>Postdoctoral Researcher at the University of Glasgow</strong>, developing BCI systems using EEG, EMG, and ECG for sensorimotor decision-making. My work combines computational neuroscience with machine learning to create intelligent interfaces between mind and machine.</p>
+        </section>
 
-    <!-- About Me Section -->
-    <div id="about" class="section">
-      <h2>About Me</h2>
-      <p>
-        At the intersection of mathematics, control systems, and neuroscience, I bring a unique perspective to artificial intelligence and human cognition. After a decade as an Assistant Professor in Control Engineering, my fascination with the human brain led me to transition into neuroscience, where I now conduct postdoctoral research at the University of Glasgow.
-      </p>
-      
-      <div class="read-more-container">
-        <button class="read-more-btn" onclick="toggleReadMore()">Read More About My Journey</button>
-        <div class="read-more-content" id="more-content">
-          <div class="expertise-grid">
-            <div class="expertise-card">
-              <h3>Research Journey</h3>
-              <p>My path from control engineering to neuroscience reflects a natural evolution in understanding complex systems. Starting with spacecraft control systems at AISRC, I progressed to researching chaotic dynamical systems at the Bernoulli Institute, ultimately leading to my current work in computational neuroscience at the University of Glasgow.</p>
-              <ul class="career-highlights">
-                <li>🎓 Transitioned from Control Engineering Professor to Neuroscience Research</li>
-                <li>🚁️ Led satellite control system development</li>
-                <li>🧠 Led BCI research combining control theory with neuroscience</li>
-              </ul>
+        <!-- Research Areas -->
+        <section class="section">
+            <h2 class="section-title">Research & Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h3>Neural Interfaces</h3>
+                    <p>Developing brain-computer interfaces that translate neural signals into actionable commands</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Computational Neuroscience</h3>
+                    <p>Modeling complex neural dynamics and cognitive processes</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>AI & Machine Learning</h3>
+                    <p>Applying deep learning to neural data analysis and pattern recognition</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Control Systems</h3>
+                    <p>Designing adaptive control algorithms for real-time neural signal processing</p>
+                </div>
             </div>
-            
-            <div class="expertise-card">
-              <h3>Mathematical & Technical Expertise</h3>
-              <p>My foundation in linear and nonlinear algebra, combined with extensive experience in system modeling, provides unique insights into both neural networks and AI systems. This mathematical rigor enriches my approach to neuroscience research and AI development.</p>
-              <ul class="technical-skills">
-                <li>💲 Advanced mathematical modeling and analysis</li>
-                <li>💻 Proficient in Python, MATLAB for neural data analysis</li>
-                <li>🔧 Expert in BCI system design and implementation</li>
-              </ul>
-            </div>
-            
-            <div class="expertise-card">
-              <h3>Current Research Focus</h3>
-              <p>At the University of Glasgow, I integrate control theory with neuroscience, developing sophisticated BCI systems using EEG, EMG, and fMRI. My research focuses on understanding human decision-making processes through computational modeling and AI-enhanced analysis.</p>
-              <ul class="research-areas">
-                <li>🧪 Sensorimotor decision-making analysis</li>
-                <li>🤖 AI-enhanced neurological data processing</li>
-                <li>🔬 Real-time BCI system development</li>
-              </ul>
-            </div>
-            
-            <div class="expertise-card">
-              <h3>Leadership & Innovation</h3>
-              <p>Throughout my career, I've demonstrated strong leadership in both academic and research settings. From managing satellite projects to supervising graduate research, I combine technical expertise with effective team leadership to drive innovative solutions.</p>
-              <ul class="achievements">
-                <li>👥 Extensive experience in project and team management</li>
-                <li>🎯 Track record of successful research project delivery</li>
-                <li>🌟 Recognized for teaching and research excellence</li>
-              </ul>
-            </div>
-            
-            <div class="expertise-card">
-              <h3>From Control Engineering to Brain Science</h3>
-              <p>My academic journey began in control engineering, where I earned a PhD and served as an Assistant Professor for nearly a decade. During my PhD research, I developed a keen interest in chaos theory and its potential connection to human brain disorders such as Parkinson’s and epilepsy. This fascination sparked a desire to bridge the gap between complex systems in engineering and neuroscience.</p>
+        </section>
 
-              <p>After years of exploring chaotic dynamical systems and advanced control theories, I delved deeper into computational neuroscience. Attending workshops on brain signal processing further solidified my interest, leading me to participate in a brain-computer interface project. This hands-on experience with EEG data and neurotechnology fueled my enthusiasm for applying engineering principles to neuroscience.</p>
-
-              <p>To gain a formal understanding of the brain’s cognitive functions, I pursued a second master’s degree in Brain and Cognition at UPF Barcelona. This experience equipped me with essential knowledge in neuroscience and brain-computer interfaces, paving the way for my current postdoctoral research position at the University of Glasgow. Here, I integrate control theory with neuroscience, focusing on real-time BCI systems to study human decision-making and cognitive processes.</p>
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Focus</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">Deep Learning</span>
+                <span class="skill-tag">EEG/EMG/ECG</span>
+                <span class="skill-tag">Signal Processing</span>
+                <span class="skill-tag">Control Theory</span>
+                <span class="skill-tag">Neurotechnology</span>
+                <span class="skill-tag">Brain-Computer Interfaces</span>
             </div>
-          </div>
+        </section>
+
+        <!-- Academic Background -->
+        <section class="section">
+            <h2 class="section-title">Academic Journey</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h3>PhD Control Engineering</h3>
+                    <p>Nonlinear Dynamics & System Optimization</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>MSc Brain & Cognition</h3>
+                    <p>Computational approaches to understanding neural mechanisms</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Postdoctoral Research</h3>
+                    <p>University of Glasgow & University of Groningen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Work -->
+        <section class="section">
+            <h2 class="section-title">Current Projects</h2>
+            <p>Exploring the intersection of large language models and neurotechnology • Developing AI-enhanced neural data analysis methods • Creating human-inspired decision-making models</p>
+        </section>
+
+        <!-- Contact -->
+        <section class="section">
+            <h2 class="section-title">Connect</h2>
+            <div class="contact-links">
+                <a href="mailto:hmd.ghane.s@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/hamedghane" target="_blank">LinkedIn</a>
+                <a href="https://github.com/HamedGhaneS" target="_blank">GitHub</a>
+                <a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei" target="_blank">Academic Profile</a>
+            </div>
+        </section>
+
+        <!-- Quote -->
+        <div class="quote">
+            "At the intersection of minds and machines, we discover the future of human potential"
         </div>
-      </div>
-
-      <ul>
-        <li>🔬 Currently developing BCI systems using EEG, EMG, and ECG to study sensorimotor decision-making.</li>
-        <li>🎓 PhD in Control Engineering with expertise in nonlinear dynamics.</li>
-        <li>📚 Second master's in Brain and Cognition.</li>
-        <li>💡 Fascinated by language models and their cognitive implications.</li>
-      </ul>
     </div>
-
-    <!-- Technical Stack Section -->
-    <div id="stack" class="section">
-      <h2>Technical Stack</h2>
-      <ul>
-        <li><b>Programming:</b> Python, MATLAB</li>
-        <li><b>Neural Data Analysis:</b> EEG, EMG, ECG</li>
-        <li><b>Machine Learning & AI:</b> Deep Learning, Computational Intelligence, NLP</li>
-        <li><b>Control Systems:</b> Nonlinear Control, System Analysis and Optimization</li>
-        <li><b>Data Analysis:</b> Statistical Analysis, Data Mining</li>
-        <li><b>Tools & Technologies:</b> Brain-Computer Interfaces, EEG-ECG-EMG Recording</li>
-      </ul>
-    </div>
-
-    <!-- Contact Section -->
-    <div id="contact" class="section">
-      <h2>Connect with Me</h2>
-      <ul>
-        <li>📧 <b>Email:</b></li>
-        <ul>
-          <li>Academic: <a href="mailto:Hamed.ghanesasansaraei@Glasgow.ac.uk">Hamed.ghanesasansaraei@Glasgow.ac.uk</a></li>
-          <li>Personal: <a href="mailto:hmd.ghane.s@gmail.com">hmd.ghane.s@gmail.com</a></li>
-        </ul>
-        <li>🔗 <a href="https://www.linkedin.com/in/hamedghane" target="_blank">LinkedIn</a></li>
-        <li>🔐 <a href="https://github.com/HamedGhaneS" target="_blank">GitHub</a></li>
-        <li>📚 <a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei" target="_blank">Academic Profile</a></li>
-      </ul>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2024 Hamed Ghane | <a href="#contact">Contact</a></p>
-    </footer>
-
-    <!-- JavaScript for Read More functionality -->
-    <script>
-      function toggleReadMore() {
-        const content = document.getElementById('more-content');
-        content.classList.toggle('show');
-        const btn = document.querySelector('.read-more-btn');
-        btn.textContent = content.classList.contains('show') ? 'Read Less' : 'Read More About My Journey';
-      }
-    </script>
-  </body>
+</body>
 </html>
