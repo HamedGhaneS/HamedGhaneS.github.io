@@ -4,622 +4,230 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dr. Hamed Ghane - Neurotechnology Researcher</title>
-<meta name="description" content="Research scientist specializing in brain-computer interfaces, real-time ML on biosignals, and neural interface technology." />
+<meta name="description" content="Research scientist specializing in brain-computer interfaces and neural interface technology." />
 <style>
-/* Landing-specific styles */
-.landing-hero {
-  min-height: 90vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #0b0d10 0%, #1a1d2e 100%);
+  color: #e7ecf3;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  background: 
-    radial-gradient(ellipse 1200px 600px at 30% 20%, rgba(122,162,255,0.15), transparent 60%),
-    radial-gradient(ellipse 800px 400px at 70% 80%, rgba(80,227,194,0.12), transparent 60%),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-  position: relative;
-  overflow: hidden;
+  justify-content: center;
+  padding: 20px;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 80px;
-  align-items: center;
+.container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
 }
 
-.mega-title {
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 900;
-  margin: 0 0 16px;
-  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.mega-subtitle {
-  font-size: 1.5rem;
-  color: #abb3bf;
-  margin: 0 0 40px;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 24px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.btn-large {
-  padding: 18px 36px;
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
-  color: #0b0d10;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 48px rgba(0,0,0,0.4);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #7aa2ff;
-  border: 2px solid #7aa2ff;
-}
-
-.btn-outline:hover {
-  background: #7aa2ff;
-  color: #0b0d10;
-}
-
-.quick-stats {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.stat-mini {
-  display: flex;
-  flex-direction: column;
-}
-
-.stat-mini strong {
-  color: #7aa2ff;
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.stat-mini span {
-  color: #abb3bf;
-  font-size: 0.95rem;
-}
-
-.profile-showcase {
-  position: relative;
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 40px;
+  box-shadow: 0 20px 60px rgba(122,162,255,0.4);
+  border: 4px solid #7aa2ff;
   animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-15px); }
 }
 
-.profile-hero {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(122,162,255,0.4);
-  border: 4px solid #7aa2ff;
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #abb3bf;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #abb3bf;
+  margin-bottom: 50px;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 16px 40px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.profile-hero:hover {
-  transform: scale(1.02);
-  box-shadow: 0 25px 70px rgba(122,162,255,0.5);
-}
-
-.profile-badge {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.btn-primary {
   background: linear-gradient(135deg, #7aa2ff, #50e3c2);
   color: #0b0d10;
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  animation: pulse 3s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(122,162,255,0.3);
 }
 
-@keyframes pulse {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.05); }
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(122,162,255,0.5);
 }
 
-/* Base styles */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  line-height: 1.6;
-  background: #0b0d10;
-  color: #e7ecf3;
-  overflow-x: hidden;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.site-header {
-  background: linear-gradient(120deg, #0b0d10, #101521 60%, #0b0d10);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(122, 162, 255, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 20px 0;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.brand h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.tag {
-  color: #abb3bf;
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.nav {
-  display: flex;
-  gap: 24px;
-}
-
-.nav a {
-  color: #e7ecf3;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  font-weight: 500;
-}
-
-.nav a:hover {
-  background: rgba(122, 162, 255, 0.1);
+.btn-secondary {
+  background: transparent;
   color: #7aa2ff;
+  border: 2px solid #7aa2ff;
 }
 
-.section {
-  padding: 80px 0;
-}
-
-.section h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin: 0 0 60px;
-  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.featured-preview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  margin-top: 40px;
-}
-
-.project-preview-card {
-  background: #12161b;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 20px;
-  padding: 32px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
-  color: inherit;
-}
-
-.project-preview-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.project-preview-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 48px rgba(0,0,0,0.4);
-  border-color: rgba(122, 162, 255, 0.4);
-}
-
-.project-preview-card:hover::before {
-  transform: scaleX(1);
-}
-
-.project-icon {
-  font-size: 3rem;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.project-preview-card h4 {
-  font-size: 1.4rem;
-  margin: 0 0 12px;
-  color: #e7ecf3;
-}
-
-.project-preview-card p {
-  color: #abb3bf;
-  line-height: 1.6;
-  margin: 0 0 20px;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.feature {
-  background: rgba(122, 162, 255, 0.1);
-  color: #7aa2ff;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.mini-about {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.mini-about p {
-  font-size: 1.2rem;
-  color: #abb3bf;
-  line-height: 1.8;
-  margin-bottom: 24px;
-}
-
-.expertise-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 32px;
-}
-
-.expertise-chip {
-  background: rgba(122, 162, 255, 0.15);
-  color: #7aa2ff;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: 1px solid rgba(122, 162, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-.expertise-chip:hover {
+.btn-secondary:hover {
   background: #7aa2ff;
   color: #0b0d10;
-  transform: translateY(-2px);
 }
 
-.contact-section {
-  background: rgba(122,162,255,0.05);
+.quick-links {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  border-top: 1px solid rgba(122,162,255,0.2);
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 32px;
-}
-
-.contact-item {
-  text-align: center;
-  padding: 32px;
-  background: #12161b;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.contact-item h4 {
-  margin: 0 0 16px;
-  color: #e7ecf3;
-}
-
-.contact-item p {
+.quick-links a {
   color: #abb3bf;
-  margin: 0;
-  line-height: 1.6;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-.site-footer {
-  background: #070911;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding: 40px 0;
+.quick-links a:hover {
+  color: #7aa2ff;
+}
+
+.stats {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin: 50px 0;
+  flex-wrap: wrap;
+}
+
+.stat {
   text-align: center;
 }
 
-.site-footer p {
-  color: #abb3bf;
-  margin: 0;
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7aa2ff;
+  margin-bottom: 5px;
 }
 
-@media (max-width: 968px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
+.stat-label {
+  font-size: 0.95rem;
+  color: #abb3bf;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
   }
   
-  .hero-buttons {
-    justify-content: center;
-  }
-  
-  .quick-stats {
-    justify-content: center;
-  }
-  
-  .profile-hero {
-    max-width: 350px;
-    margin: 0 auto;
-  }
-  
-  .mega-title {
-    font-size: 2.5rem;
-  }
-  
-  .mega-subtitle {
+  .subtitle {
     font-size: 1.2rem;
   }
-
-  .header-wrap {
+  
+  .cta-buttons {
     flex-direction: column;
+    align-items: center;
   }
-
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .stats {
+    gap: 30px;
   }
 }
 </style>
 </head>
 <body>
-<header class="site-header">
-<div class="container header-wrap">
-<div class="brand">
-<div>
-<h1>Dr. Hamed Ghane</h1>
-<p class="tag">Neurotechnology Researcher</p>
-</div>
-</div>
-<nav class="nav">
-<a href="#projects">Projects</a>
-<a href="#about">About</a>
-<a href="https://github.com/HamedGhaneS/Neurotech/raw/main/assets/CV_Hamed_Ghane.pdf" target="_blank">CV</a>
-<a href="#contact">Contact</a>
-</nav>
-</div>
-</header>
-
-<main>
-<!-- HERO SECTION -->
-<section class="landing-hero">
 <div class="container">
-<div class="hero-grid">
-<div class="hero-left">
-<h2 class="mega-title">Building Brain-Computer Interfaces</h2>
-<p class="mega-subtitle">Research scientist specializing in real-time ML on biosignals (EEG/EMG/ECG) and neural interfaces that enhance human capabilities</p>
-<div class="hero-buttons">
-<a href="https://hamedghanes.github.io/Neurotech/" class="btn btn-primary btn-large">
-🧠 Explore Research
-</a>
-<a href="https://github.com/HamedGhaneS/Neurotech/raw/main/assets/CV_Hamed_Ghane.pdf" target="_blank" class="btn btn-outline btn-large">
-📄 Download CV
-</a>
+  <img src="Hamedd.jpg" alt="Dr. Hamed Ghane" class="profile-image">
+  
+  <h1>Dr. Hamed Ghane</h1>
+  
+  <p class="subtitle">Neurotechnology Researcher</p>
+  
+  <p class="tagline">
+    Building brain-computer interfaces at the intersection of AI, neuroscience, and control engineering
+  </p>
+  
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-value">PhD</span>
+      <span class="stat-label">Control Engineering</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">MSc</span>
+      <span class="stat-label">Brain & Cognition</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">Glasgow</span>
+      <span class="stat-label">Research Associate</span>
+    </div>
+  </div>
+  
+  <div class="cta-buttons">
+    <a href="https://hamedghanes.github.io/Neurotech/" class="btn btn-primary">
+      🧠 View Research Projects
+    </a>
+    <a href="https://github.com/HamedGhaneS/Neurotech/raw/main/assets/CV_Hamed_Ghane.pdf" target="_blank" class="btn btn-secondary">
+      📄 Download CV
+    </a>
+  </div>
+  
+  <div class="quick-links">
+    <a href="mailto:hmd.ghane.s@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/hamedghane" target="_blank">LinkedIn</a>
+    <a href="https://github.com/HamedGhaneS" target="_blank">GitHub</a>
+    <a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei/" target="_blank">University Profile</a>
+  </div>
 </div>
-<div class="quick-stats">
-<div class="stat-mini">
-<strong>PhD</strong>
-<span>Control Engineering</span>
-</div>
-<div class="stat-mini">
-<strong>MSc</strong>
-<span>Brain & Cognition</span>
-</div>
-<div class="stat-mini">
-<strong>Glasgow</strong>
-<span>Research Associate</span>
-</div>
-</div>
-</div>
-<div class="hero-right">
-<div class="profile-showcase">
-<img src="Hamedd.jpg" alt="Dr. Hamed Ghane" class="profile-hero">
-<div class="profile-badge">✨ Open to Collaboration</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- FEATURED PROJECTS -->
-<section id="projects" class="container section">
-<h3>Featured Research Projects</h3>
-<p style="text-align: center; color: #abb3bf; font-size: 1.1rem; max-width: 700px; margin: -30px auto 40px;">
-Cutting-edge neurotechnology research at the intersection of AI, neuroscience, and control engineering
-</p>
-
-<div class="featured-preview">
-<a href="https://hamedghanes.github.io/Neurotech/Prosody_on_Demand/" class="project-preview-card">
-<span class="project-icon">🎵</span>
-<h4>Prosody-on-Demand</h4>
-<p>AI-driven audio-neural interface that transforms speech into memorable formats using real-time EEG feedback. 40%+ memory improvement in clinical studies.</p>
-<div class="project-tags">
-<span class="feature">Neural Feedback</span>
-<span class="feature">Memory Enhancement</span>
-<span class="feature">Real-time AI</span>
-</div>
-</a>
-
-<a href="https://hamedghanes.github.io/Neurotech/Agency-Safe-HMIs/" class="project-preview-card">
-<span class="project-icon">⚖️</span>
-<h4>Agency-Safe HMIs</h4>
-<p>Establishing ethical timing thresholds for BCIs to preserve human sense of agency, autonomy, and legal responsibility in ultra-fast systems.</p>
-<div class="project-tags">
-<span class="feature">Ethics & Law</span>
-<span class="feature">BCI Safety</span>
-<span class="feature">Human Agency</span>
-</div>
-</a>
-
-<div class="project-preview-card" style="opacity: 0.7; cursor: default;">
-<span class="project-icon">🔬</span>
-<h4>Multi-Modal BCI Platform</h4>
-<p>Real-time closed-loop system integrating EEG, ECG, and EMG for sensorimotor decision-making. Latency-optimized architecture with SIL/HIL validation.</p>
-<div class="project-tags">
-<span class="feature">Real-time ML</span>
-<span class="feature">Multi-modal</span>
-<span class="feature">Low Latency</span>
-</div>
-<div style="margin-top: 16px; font-size: 0.85rem; color: #7aa2ff;">
-📝 Detailed documentation coming soon
-</div>
-</div>
-</div>
-</section>
-
-<!-- ABOUT SECTION -->
-<section id="about" class="container section" style="background: rgba(122,162,255,0.03); padding: 80px 24px; border-radius: 24px;">
-<div class="mini-about">
-<h3>About Me</h3>
-<p>I'm a research scientist with a control engineering foundation and expertise in mathematical modeling, focused on neural interfaces. I build time-series ML systems for EEG/EMG/ECG—from event detection to continuous decoding—and run closed-loop human studies with causal, low-latency inference in Python/LSL.</p>
-<p>Currently a Research Associate at the University of Glasgow, I develop BCI systems that combine computational neuroscience with machine learning to create intelligent interfaces between mind and machine.</p>
-<div class="expertise-chips">
-<span class="expertise-chip">🧠 Brain-Computer Interfaces</span>
-<span class="expertise-chip">🤖 Real-time ML</span>
-<span class="expertise-chip">⚡ Biosignal Processing</span>
-<span class="expertise-chip">🎯 Control Systems</span>
-<span class="expertise-chip">📊 Python/PyTorch</span>
-<span class="expertise-chip">🔬 Experimental Design</span>
-</div>
-<div style="margin-top: 40px;">
-<a href="https://github.com/HamedGhaneS/Neurotech/raw/main/assets/CV_Hamed_Ghane.pdf" target="_blank" class="btn btn-primary">📄 View Full CV</a>
-<a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei/" target="_blank" rel="noopener" class="btn btn-outline" style="margin-left: 16px;">🎓 Academic Profile</a>
-</div>
-</div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section id="contact" class="container section contact-section">
-<h3>Let's Collaborate</h3>
-<div class="contact-grid">
-<div class="contact-item">
-<h4>📧 Email</h4>
-<p><a href="mailto:hmd.ghane.s@gmail.com" style="color: #7aa2ff; text-decoration: none; font-weight: 600;">hmd.ghane.s@gmail.com</a></p>
-</div>
-<div class="contact-item">
-<h4>💼 LinkedIn</h4>
-<p><a href="https://linkedin.com/in/hamedghane" target="_blank" rel="noopener" style="color: #7aa2ff; text-decoration: none; font-weight: 600;">linkedin.com/in/hamedghane</a></p>
-</div>
-<div class="contact-item">
-<h4>💻 GitHub</h4>
-<p><a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener" style="color: #7aa2ff; text-decoration: none; font-weight: 600;">github.com/HamedGhaneS</a></p>
-</div>
-</div>
-<div style="text-align: center; margin-top: 40px; padding: 32px; background: #12161b; border-radius: 16px; border: 1px solid rgba(122,162,255,0.2);">
-<p style="font-size: 1.1rem; color: #abb3bf; margin: 0 0 20px;">Interested in collaboration on neurotechnology research?</p>
-<a href="mailto:hmd.ghane.s@gmail.com" class="btn btn-primary">Get in Touch</a>
-</div>
-</section>
-</main>
-
-<footer class="site-footer">
-<div class="container">
-<p>© <span id="y"></span> Dr. Hamed Ghane · University of Glasgow · Research Scientist (Neurotech)</p>
-<p style="margin-top: 8px;">
-<a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener" style="color: #abb3bf; text-decoration: none; margin: 0 12px;">GitHub</a>
-<a href="https://linkedin.com/in/hamedghane" target="_blank" rel="noopener" style="color: #abb3bf; text-decoration: none; margin: 0 12px;">LinkedIn</a>
-<a href="https://github.com/HamedGhaneS/Neurotech/raw/main/assets/CV_Hamed_Ghane.pdf" target="_blank" style="color: #abb3bf; text-decoration: none; margin: 0 12px;">CV</a>
-</p>
-</div>
-</footer>
-<script>
-document.getElementById('y').textContent = new Date().getFullYear();
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-</script>
 </body>
 </html>
