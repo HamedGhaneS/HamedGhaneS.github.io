@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dr. Hamed Ghane - Neurotechnology Researcher</title>
 <meta name="description" content="Research scientist specializing in brain-computer interfaces, control engineering and neural interface technology." />
+<link rel="icon" href="/Neurotech/assets/favicon.png" />
 <style>
 * {
   margin: 0;
@@ -176,57 +177,60 @@ h1 {
   transform: translateY(-2px);
 }
 
+/* --- Added: chips & contact grid for About/Contact sections --- */
+.expertise-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.expertise-chip {
+  background: rgba(122,162,255,0.15);
+  color: #7aa2ff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid rgba(122,162,255,0.3);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+  text-align: left;
+}
+.contact-item h4 { margin-bottom: 6px; }
+
+/* --- Responsive --- */
 @media (max-width: 768px) {
   .profile-image {
     width: 180px;
     height: 180px;
   }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  .subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .tagline {
-    font-size: 1rem;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .btn {
-    width: 100%;
-    max-width: 320px;
-  }
-  
-  .stats {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .quick-links {
-    gap: 25px;
-  }
+  h1 { font-size: 2rem; }
+  .subtitle { font-size: 1.2rem; }
+  .tagline { font-size: 1rem; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 320px; }
+  .stats { grid-template-columns: 1fr; gap: 20px; }
+  .quick-links { gap: 25px; }
 }
 </style>
 </head>
 <body>
 <div class="container">
   <img src="Hamedd.jpg" alt="Dr. Hamed Ghane" class="profile-image">
-  
+
   <h1>Dr. Hamed Ghane</h1>
-  
+
   <p class="subtitle">Neurotechnology Researcher</p>
-  
+
   <p class="tagline">
     Building brain-computer interfaces at the intersection of AI, neuroscience, and control engineering
   </p>
-  
+
   <div class="stats">
     <div class="stat">
       <span class="stat-value">PhD - Amirkabir University of Technology, Tehran</span>
@@ -241,21 +245,60 @@ h1 {
       <span class="stat-label">Research Associate</span>
     </div>
   </div>
-  
+
   <div class="cta-buttons">
     <a href="https://hamedghanes.github.io/Neurotech/" class="btn btn-primary">
       View Research Projects
     </a>
-    <a href="https://github.com/HamedGhaneS/Neurotech/raw/main/assets/CV_Hamed_Ghane.pdf" target="_blank" class="btn btn-secondary">
+    <a href="https://github.com/HamedGhaneS/Neurotech/raw/main/assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
       Download CV
     </a>
   </div>
-  
+
+  <!-- ===== About Me (added) ===== -->
+  <section id="about" style="background: rgba(122,162,255,0.08); padding: 40px 24px; border-radius: 16px; margin: 10px 0 32px;">
+    <h3 style="margin-bottom: 12px; color:#7aa2ff;">About Me</h3>
+    <p style="color:#abb3bf; max-width: 820px; margin: 0 auto 8px;">
+      I'm a research scientist with a control-engineering foundation working on neural interfaces and real-time ML on EEG/EMG/ECG.
+      I build closed-loop systems with causal, low-latency inference in Python/LSL.
+    </p>
+    <p style="color:#abb3bf; max-width: 820px; margin: 0 auto;">
+      Currently a Research Associate at the University of Glasgow, I combine computational neuroscience, control engineering and ML to create intelligent brain-computer interfaces.
+    </p>
+    <div class="expertise-chips">
+      <span class="expertise-chip">🧠 Brain-Computer Interfaces</span>
+      <span class="expertise-chip">🤖 Real-time ML</span>
+      <span class="expertise-chip">⚡ Biosignal Processing</span>
+      <span class="expertise-chip">🎯 Control Systems</span>
+      <span class="expertise-chip">📊 Python/PyTorch</span>
+      <span class="expertise-chip">🔬 Experimental Design</span>
+    </div>
+  </section>
+
+  <!-- ===== Contact (added) ===== -->
+  <section id="contact" class="section" style="margin: 0 0 24px;">
+    <h3 style="margin-bottom: 16px; color:#7aa2ff;">Get in touch</h3>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <h4>📧 Email</h4>
+        <p><a href="mailto:hmd.ghane.s@gmail.com" style="color:#7aa2ff; text-decoration:none; font-weight:600;">hmd.ghane.s@gmail.com</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>💼 LinkedIn</h4>
+        <p><a href="https://linkedin.com/in/hamedghane" target="_blank" rel="noopener noreferrer" style="color:#7aa2ff; text-decoration:none; font-weight:600;">linkedin.com/in/hamedghane</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>💻 GitHub</h4>
+        <p><a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener noreferrer" style="color:#7aa2ff; text-decoration:none; font-weight:600;">github.com/HamedGhaneS</a></p>
+      </div>
+    </div>
+  </section>
+
   <div class="quick-links">
     <a href="mailto:hmd.ghane.s@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/hamedghane" target="_blank">LinkedIn</a>
-    <a href="https://github.com/HamedGhaneS" target="_blank">GitHub</a>
-    <a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei/" target="_blank">University Profile</a>
+    <a href="https://linkedin.com/in/hamedghane" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei/" target="_blank" rel="noopener noreferrer">University Profile</a>
   </div>
 </div>
 </body>
