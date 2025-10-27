@@ -31,6 +31,23 @@ body {
   text-align: center;
 }
 
+/* Hero Video Styling */
+.hero-video-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(122,162,255,0.3);
+  max-height: 300px;
+}
+
+.hero-video {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .profile-image {
   width: 220px;
   height: 220px;
@@ -205,6 +222,9 @@ h1 {
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
+  .hero-video-container {
+    max-height: 200px;
+  }
   .profile-image {
     width: 180px;
     height: 180px;
@@ -221,6 +241,15 @@ h1 {
 </head>
 <body>
 <div class="container">
+  <!-- Hero Video (Added) -->
+  <div class="hero-video-container">
+    <video class="hero-video" autoplay loop muted playsinline>
+      <source src="Academic_Website_Hero_Video_Generation.mp4" type="video/mp4">
+      <!-- Fallback message if video doesn't load -->
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
   <img src="Hamedd.jpg" alt="Dr. Hamed Ghane" class="profile-image">
 
   <h1>Dr. Hamed Ghane</h1>
