@@ -31,7 +31,7 @@ body {
   text-align: center;
 }
 
-/* Hero Video Styling - FIXED */
+/* Hero Video Styling */
 .hero-video-container {
   position: relative;
   width: 100%;
@@ -39,16 +39,14 @@ body {
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(122,162,255,0.3);
-  /* Removed max-height constraint */
-  /* Added aspect ratio preservation */
-  aspect-ratio: 16/9; /* Adjust this ratio based on your video */
+  aspect-ratio: 16/9;
 }
 
 .hero-video {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover; /* This ensures the video fills the container without distortion */
+  object-fit: cover;
 }
 
 .profile-image {
@@ -138,12 +136,112 @@ h1 {
   transform: translateY(-3px);
 }
 
+/* Timeline Section */
+.timeline-section {
+  margin: 60px 0;
+  position: relative;
+}
+
+.timeline-title {
+  font-size: 1.8rem;
+  color: #50e3c2;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
   margin: 50px 0;
   padding: 0 20px;
+  position: relative;
+}
+
+/* Timeline flowing connectors for 4-box layout */
+@media (min-width: 1200px) {
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  
+  /* Flowing curved connectors with gradient */
+  .stat:nth-child(1)::after,
+  .stat:nth-child(2)::after,
+  .stat:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    right: -28px;
+    width: 24px;
+    height: 50px;
+    border-right: 3px solid;
+    border-top: 3px solid;
+    border-image: linear-gradient(135deg, #50e3c2, #7aa2ff) 1;
+    border-top-right-radius: 25px;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    z-index: 0;
+    animation: flowPulse 3s ease-in-out infinite;
+  }
+  
+  /* Stagger animation delays */
+  .stat:nth-child(2)::after {
+    animation-delay: 0.5s;
+  }
+  
+  .stat:nth-child(3)::after {
+    animation-delay: 1s;
+  }
+  
+  /* Arrowheads with glow effect */
+  .stat:nth-child(1)::before,
+  .stat:nth-child(2)::before,
+  .stat:nth-child(3)::before {
+    content: '➤';
+    position: absolute;
+    top: 40%;
+    right: -38px;
+    transform: translateY(-50%) rotate(0deg);
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, #50e3c2, #7aa2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.7;
+    z-index: 0;
+    text-shadow: 0 0 10px rgba(80, 227, 194, 0.3);
+    animation: arrowPulse 3s ease-in-out infinite;
+  }
+  
+  .stat:nth-child(2)::before {
+    animation-delay: 0.5s;
+  }
+  
+  .stat:nth-child(3)::before {
+    animation-delay: 1s;
+  }
+}
+
+@keyframes flowPulse {
+  0%, 100% { 
+    opacity: 0.5;
+    transform: translateY(-50%) scale(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: translateY(-50%) scale(1.05);
+  }
+}
+
+@keyframes arrowPulse {
+  0%, 100% { 
+    opacity: 0.7;
+  }
+  50% { 
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(80, 227, 194, 0.6));
+  }
 }
 
 .stat {
@@ -152,6 +250,9 @@ h1 {
   border-radius: 16px;
   border: 1px solid rgba(122,162,255,0.2);
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
 }
 
 .stat:hover {
@@ -166,19 +267,38 @@ h1 {
   display: block;
 }
 
-.stat-value {
+.stat-year {
   display: block;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #50e3c2;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.stat-title {
+  display: block;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #7aa2ff;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e7ecf3;
+  margin-bottom: 6px;
   line-height: 1.4;
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #abb3bf;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .quick-links {
@@ -203,7 +323,7 @@ h1 {
   transform: translateY(-2px);
 }
 
-/* --- Added: chips & contact grid for About/Contact sections --- */
+/* Expertise chips & contact grid */
 .expertise-chips {
   display: flex;
   flex-wrap: wrap;
@@ -211,6 +331,7 @@ h1 {
   justify-content: center;
   margin-top: 24px;
 }
+
 .expertise-chip {
   background: rgba(122,162,255,0.15);
   color: #7aa2ff;
@@ -220,6 +341,7 @@ h1 {
   font-weight: 600;
   border: 1px solid rgba(122,162,255,0.3);
 }
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -227,9 +349,29 @@ h1 {
   margin-top: 24px;
   text-align: left;
 }
+
 .contact-item h4 { margin-bottom: 6px; }
 
-/* --- Responsive --- */
+/* Responsive */
+@media (max-width: 1199px) {
+  .stats {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  /* Hide connectors on smaller screens */
+  .stat::before,
+  .stat::after {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .profile-image {
     width: 180px;
@@ -240,18 +382,20 @@ h1 {
   .tagline { font-size: 1rem; }
   .cta-buttons { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 320px; }
-  .stats { grid-template-columns: 1fr; gap: 20px; }
+  .stats { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+  }
   .quick-links { gap: 25px; }
 }
 </style>
 </head>
 <body>
 <div class="container">
-  <!-- Hero Video (Added) -->
+  <!-- Hero Video -->
   <div class="hero-video-container">
     <video class="hero-video" autoplay loop muted playsinline>
       <source src="Academic_Website_Hero_Video_Generation.mp4" type="video/mp4">
-      <!-- Fallback message if video doesn't load -->
       Your browser does not support the video tag.
     </video>
   </div>
@@ -266,20 +410,40 @@ h1 {
     Building brain-computer interfaces at the intersection of AI, neuroscience, and control engineering
   </p>
 
-  <div class="stats">
-    <div class="stat">
-      <span class="stat-value">PhD - Amirkabir University of Technology, Tehran</span>
-      <span class="stat-label">Control Engineering</span>
-    </div>
-    <div class="stat">
-      <span class="stat-value">2nd MSc - Pompeu Fabra University, Barcelona</span>
-      <span class="stat-label">Brain & Cognition</span>
-    </div>
-    <div class="stat">
-      <a href="https://mphiliastides.org/en/team/hamed-ghane" target="_blank" rel="noopener noreferrer">
-        <span class="stat-value">University of Glasgow</span>
-        <span class="stat-label">Research Associate • PhiestediaLAB</span>
-      </a>
+  <!-- Career Timeline -->
+  <div class="timeline-section">
+    <h2 class="timeline-title">🎯 Career Journey</h2>
+    
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-year">2002 - 2014</span>
+        <span class="stat-title">Control Engineering Path</span>
+        <span class="stat-value">BSc, MSc, PhD</span>
+        <span class="stat-label">Amirkabir University of Technology, Tehran</span>
+      </div>
+      
+      <div class="stat">
+        <span class="stat-year">2014 - 2022</span>
+        <span class="stat-title">Assistant Professor</span>
+        <span class="stat-value">Control Engineering</span>
+        <span class="stat-label">Islamic Azad University, Guilan</span>
+      </div>
+      
+      <div class="stat">
+        <span class="stat-year">2022 - 2024</span>
+        <span class="stat-title">Pivot to Neuroscience</span>
+        <span class="stat-value">2nd MSc - Brain & Cognition</span>
+        <span class="stat-label">Pompeu Fabra University, Barcelona</span>
+      </div>
+      
+      <div class="stat">
+        <a href="https://mphiliastides.org/en/team/hamed-ghane" target="_blank" rel="noopener noreferrer">
+          <span class="stat-year">2024 - Present</span>
+          <span class="stat-title">Research Associate</span>
+          <span class="stat-value">University of Glasgow</span>
+          <span class="stat-label">PhiestediaLAB • Multimodal BCI for Decision-Making & Learning</span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -292,7 +456,7 @@ h1 {
     </a>
   </div>
 
-  <!-- ===== About Me (added) ===== -->
+  <!-- About Me -->
   <section id="about" style="background: rgba(122,162,255,0.08); padding: 40px 24px; border-radius: 16px; margin: 10px 0 32px;">
     <h3 style="margin-bottom: 12px; color:#7aa2ff;">About Me</h3>
     <p style="color:#abb3bf; max-width: 820px; margin: 0 auto 8px;">
@@ -312,13 +476,13 @@ h1 {
     </div>
   </section>
 
-  <!-- ===== Contact (added) ===== -->
+  <!-- Contact -->
   <section id="contact" class="section" style="margin: 0 0 24px;">
     <h3 style="margin-bottom: 16px; color:#7aa2ff;">Get in touch</h3>
     <div class="contact-grid">
       <div class="contact-item">
         <h4>📧 Email</h4>
-        <p><a href="mailto:hmd.ghane.s@gmail.com" style="color:#7aa2ff; text-decoration:none; font-weight:600;">hmd.ghane.s@gmail.com</a></p>
+        <p><a href="/cdn-cgi/l/email-protection#7911141d571e1118171c570a391e14181015571a1614" style="color:#7aa2ff; text-decoration:none; font-weight:600;"><span class="__cf_email__" data-cfemail="dab2b7bef4bdb2bbb4bff4a99abdb7bbb3b6f4b9b5b7">[email&#160;protected]</span></a></p>
       </div>
       <div class="contact-item">
         <h4>💼 LinkedIn</h4>
@@ -332,11 +496,7 @@ h1 {
   </section>
 
   <div class="quick-links">
-    <a href="mailto:hmd.ghane.s@gmail.com">Email</a>
+    <a href="/cdn-cgi/l/email-protection#ee86838ac089868f808bc09dae89838f8782c08d8183">Email</a>
     <a href="https://linkedin.com/in/hamedghane" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     <a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei/" target="_blank" rel="noopener noreferrer">University Profile</a>
-  </div>
-</div>
-</body>
-</html>
+    <a hre
