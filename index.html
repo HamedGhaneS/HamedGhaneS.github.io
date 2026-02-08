@@ -360,6 +360,7 @@ h1 {
   background: rgba(122,162,255,0.15);
   transform: translateX(-50%);
   border-radius: 2px;
+  z-index: 1;
 }
 
 .timeline-line-progress {
@@ -400,6 +401,22 @@ h1 {
   margin-bottom: 40px;
 }
 
+.period-header::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(to right, 
+    transparent 0%, 
+    #0b0d10 20%, 
+    #0b0d10 80%, 
+    transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .period-node {
   position: absolute;
   left: 50%;
@@ -427,25 +444,29 @@ h1 {
 }
 
 .period-badge {
-  background: rgba(122,162,255,0.12);
+  background: rgba(11, 13, 16, 0.95);
   border: 2px solid rgba(122,162,255,0.3);
   border-radius: 30px;
   padding: 14px 32px;
   display: inline-block;
   position: relative;
-  z-index: 1;
+  z-index: 3;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .period-year {
   font-size: 1.15rem;
   font-weight: 800;
   color: #7aa2ff;
+  white-space: nowrap;
 }
 
 .period-label {
   font-size: 0.95rem;
   color: #50e3c2;
   margin-left: 10px;
+  white-space: nowrap;
 }
 
 /* ========== PROJECT BRANCHES ========== */
@@ -934,8 +955,20 @@ h1 {
     left: 20px;
   }
   
+  .period-header::before {
+    left: 20px;
+    transform: none;
+    width: 80px;
+    background: linear-gradient(to right, 
+      #0b0d10 0%, 
+      #0b0d10 70%, 
+      transparent 100%);
+  }
+  
   .period-badge {
     margin-left: 30px;
+    padding: 10px 20px;
+    z-index: 3;
   }
   
   .project-branches {
