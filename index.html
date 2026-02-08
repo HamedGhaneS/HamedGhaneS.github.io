@@ -1,0 +1,1543 @@
+<!doctype html>
+<!--
+ * Academic Portfolio Website - Enhanced with Branching Timeline
+ * Author: Hamed Ghane
+ * Date: February 8, 2026
+ * 
+ * Description: Personal academic website featuring branching project timeline
+ * that showcases multidisciplinary control engineering expertise across robotics,
+ * power electronics, aerospace, chemical processes, and neurotech domains.
+ * 
+ * Input: User interactions (scroll, click, touch, hover)
+ * Output: Animated portfolio with branching career visualization showing
+ * how diverse control engineering experiences converge into current research
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Hamed Ghane - Control Systems Engineer | Multidisciplinary Expertise</title>
+<meta name="description" content="Control systems engineer (PhD) specializing in model-based development (Python/MATLAB/Simulink), real-time closed-loop systems, and validation workflows across robotics, aerospace, power electronics, and neurotech domains." />
+<link rel="icon" href="/Neurotech/assets/favicon.png" />
+<style>
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #0b0d10 0%, #1a1d2e 100%);
+  background-attachment: fixed;
+  color: #e7ecf3;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Hero Video Styling */
+.hero-video-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(122,162,255,0.3);
+  aspect-ratio: 16/9;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.profile-image {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 40px;
+  box-shadow: 0 20px 60px rgba(122,162,255,0.5);
+  border: 5px solid #7aa2ff;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: scaleIn 1s ease 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+.subtitle {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: #50e3c2;
+  margin-bottom: 30px;
+  font-weight: 400;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.7s forwards;
+  text-align: center;
+  width: 100%;
+}
+
+.tagline {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #abb3bf;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  max-width: 700px;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.9s forwards;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* ========== DOMAIN EXPERTISE SHOWCASE ========== */
+.domain-showcase {
+  padding: 80px 20px;
+  background: rgba(122,162,255,0.03);
+  border-top: 1px solid rgba(122,162,255,0.1);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.domain-showcase.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.domain-showcase h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 16px;
+  text-align: center;
+  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.domain-subtitle {
+  color: #abb3bf;
+  font-size: 1.05rem;
+  margin-bottom: 50px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.domain-card {
+  background: rgba(122,162,255,0.08);
+  border: 2px solid rgba(122,162,255,0.2);
+  border-radius: 16px;
+  padding: 28px 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.domain-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(122,162,255,0.5);
+  box-shadow: 0 15px 40px rgba(122,162,255,0.2);
+}
+
+.domain-card.active {
+  border-color: #7aa2ff;
+  background: rgba(122,162,255,0.15);
+  box-shadow: 0 15px 40px rgba(122,162,255,0.25);
+}
+
+.domain-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.domain-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #7aa2ff;
+  margin-bottom: 6px;
+}
+
+.domain-count {
+  font-size: 0.85rem;
+  color: #abb3bf;
+}
+
+/* ========== ENHANCED TIMELINE SECTION ========== */
+.timeline-section {
+  padding: 100px 20px;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.title-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #7aa2ff);
+  border-radius: 2px;
+}
+
+.title-line:last-child {
+  background: linear-gradient(90deg, #7aa2ff, transparent);
+}
+
+.title-icon {
+  font-size: 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.timeline-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  position: relative;
+  display: inline-block;
+}
+
+.timeline-title .text-gradient {
+  background: linear-gradient(135deg, #7aa2ff 0%, #50e3c2 50%, #7aa2ff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+.timeline-subtitle {
+  font-size: 1.05rem;
+  color: #abb3bf;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.title-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #7aa2ff, #50e3c2);
+  margin: 20px auto 0;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-underline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* ========== TIMELINE CONTAINER ========== */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: rgba(122,162,255,0.15);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-line-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, #7aa2ff, #50e3c2);
+  border-radius: 2px;
+  transition: height 0.1s linear;
+}
+
+/* ========== TIMELINE PERIOD ========== */
+.timeline-period {
+  position: relative;
+  margin-bottom: 100px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-period.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-period:last-child {
+  margin-bottom: 0;
+}
+
+/* Period Header */
+.period-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.period-node {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
+  border-radius: 50%;
+  border: 5px solid #0b0d10;
+  box-shadow: 0 0 0 4px rgba(122,162,255,0.3);
+  z-index: 2;
+}
+
+.timeline-period.current .period-node {
+  animation: currentPulse 2s ease-in-out infinite;
+}
+
+@keyframes currentPulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 4px rgba(122,162,255,0.3), 0 0 20px rgba(122,162,255,0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 12px rgba(122,162,255,0.1), 0 0 40px rgba(122,162,255,0.6);
+  }
+}
+
+.period-badge {
+  background: rgba(122,162,255,0.12);
+  border: 2px solid rgba(122,162,255,0.3);
+  border-radius: 30px;
+  padding: 14px 32px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.period-year {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #7aa2ff;
+}
+
+.period-label {
+  font-size: 0.95rem;
+  color: #50e3c2;
+  margin-left: 10px;
+}
+
+/* ========== PROJECT BRANCHES ========== */
+.project-branches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.branch-left {
+  text-align: right;
+  padding-right: 50px;
+}
+
+.branch-right {
+  text-align: left;
+  padding-left: 50px;
+}
+
+.branch-item {
+  position: relative;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-period.visible .branch-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.branch-item:nth-child(1) { transition-delay: 0.1s; }
+.branch-item:nth-child(2) { transition-delay: 0.2s; }
+.branch-item:nth-child(3) { transition-delay: 0.3s; }
+.branch-item:nth-child(4) { transition-delay: 0.4s; }
+
+.branch-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Branch connector lines */
+.branch-left .branch-item::before {
+  content: '';
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(122,162,255,0.4));
+}
+
+.branch-right .branch-item::before {
+  content: '';
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(122,162,255,0.4), transparent);
+}
+
+/* Branch Card */
+.branch-card {
+  background: rgba(122,162,255,0.06);
+  border: 2px solid rgba(122,162,255,0.2);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.branch-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #7aa2ff, #50e3c2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.branch-card:hover::after {
+  opacity: 1;
+}
+
+.branch-card:hover {
+  border-color: rgba(122,162,255,0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(122,162,255,0.2);
+  background: rgba(122,162,255,0.1);
+}
+
+/* Domain-specific accent colors */
+.branch-card[data-domain="robotics"]:hover::after { background: #ffd93d; }
+.branch-card[data-domain="power"]:hover::after { background: #ff6b9d; }
+.branch-card[data-domain="aerospace"]:hover::after { background: #9d4edd; }
+.branch-card[data-domain="chemical"]:hover::after { background: #06ffa5; }
+.branch-card[data-domain="neurotech"]:hover::after { background: #50e3c2; }
+.branch-card[data-domain="nonlinear"]:hover::after { background: #ff9f1c; }
+.branch-card[data-domain="automation"]:hover::after { background: #4cc9f0; }
+
+/* Project Type Badge */
+.project-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0b0d10;
+  background: linear-gradient(135deg, #50e3c2, #7aa2ff);
+  padding: 5px 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #e7ecf3;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.project-domain {
+  font-size: 0.9rem;
+  color: #7aa2ff;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.branch-left .project-domain {
+  justify-content: flex-end;
+}
+
+.project-tools {
+  font-size: 0.85rem;
+  color: #abb3bf;
+  line-height: 1.6;
+}
+
+/* Current badge */
+.current-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(80, 227, 194, 0.15);
+  color: #50e3c2;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 16px;
+  border: 1px solid rgba(80, 227, 194, 0.3);
+}
+
+.current-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #50e3c2;
+  border-radius: 50%;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ========== CONVERGENCE SECTION ========== */
+.convergence-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: rgba(122,162,255,0.05);
+  border-top: 1px solid rgba(122,162,255,0.1);
+  border-bottom: 1px solid rgba(122,162,255,0.1);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.convergence-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.convergence-arrow {
+  font-size: 3.5rem;
+  margin: 30px 0;
+  color: #7aa2ff;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.convergence-card {
+  max-width: 750px;
+  margin: 0 auto;
+  background: rgba(122,162,255,0.08);
+  border: 2px solid rgba(122,162,255,0.25);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.convergence-card h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.convergence-card p {
+  font-size: 1.05rem;
+  color: #abb3bf;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.convergence-card p:last-child {
+  margin-bottom: 0;
+}
+
+.convergence-card strong {
+  color: #e7ecf3;
+  font-weight: 600;
+}
+
+/* ========== CTA BUTTONS ========== */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 80px 0;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-buttons.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn {
+  padding: 18px 45px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7aa2ff, #50e3c2);
+  color: #0b0d10;
+  box-shadow: 0 8px 32px rgba(122,162,255,0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 45px rgba(122,162,255,0.6);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #7aa2ff;
+  border: 2px solid #7aa2ff;
+}
+
+.btn-secondary:hover {
+  background: #7aa2ff;
+  color: #0b0d10;
+  transform: translateY(-3px);
+}
+
+/* ========== ABOUT SECTION ========== */
+.about-section {
+  background: rgba(122,162,255,0.05);
+  border-top: 1px solid rgba(122,162,255,0.1);
+  border-bottom: 1px solid rgba(122,162,255,0.1);
+  padding: 80px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content h3 {
+  font-size: 2rem;
+  color: #7aa2ff;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: #abb3bf;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.expertise-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.expertise-chip {
+  background: rgba(122,162,255,0.15);
+  color: #7aa2ff;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(122,162,255,0.3);
+  transition: all 0.3s ease;
+}
+
+.expertise-chip:hover {
+  background: rgba(122,162,255,0.25);
+  transform: translateY(-2px);
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact-section {
+  padding: 80px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-content h3 {
+  font-size: 2rem;
+  color: #7aa2ff;
+  margin-bottom: 30px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.contact-item {
+  background: rgba(122,162,255,0.05);
+  border: 1px solid rgba(122,162,255,0.15);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  border-color: rgba(122,162,255,0.4);
+  transform: translateY(-3px);
+}
+
+.contact-item h4 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.contact-item a {
+  color: #7aa2ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+
+.contact-item a:hover {
+  color: #50e3c2;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: 40px 20px;
+  border-top: 1px solid rgba(122,162,255,0.1);
+}
+
+.quick-links {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quick-links a {
+  color: #abb3bf;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.quick-links a:hover {
+  color: #7aa2ff;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 16px;
+    min-height: 100dvh;
+  }
+  
+  .profile-image {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 30px;
+  }
+  
+  .tagline {
+    padding: 0 10px;
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  
+  .domain-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .domain-card {
+    padding: 24px 16px;
+  }
+  
+  .domain-icon {
+    font-size: 2.5rem;
+  }
+  
+  .timeline-section {
+    padding: 60px 16px;
+  }
+  
+  .section-header {
+    margin-bottom: 50px;
+  }
+  
+  .timeline-line {
+    left: 20px;
+  }
+  
+  .period-node {
+    left: 20px;
+  }
+  
+  .period-badge {
+    margin-left: 30px;
+  }
+  
+  .project-branches {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .branch-left,
+  .branch-right {
+    text-align: left;
+    padding-left: 60px;
+    padding-right: 0;
+  }
+  
+  .branch-left .branch-item::before,
+  .branch-right .branch-item::before {
+    left: -60px;
+    right: auto;
+    width: 60px;
+    background: linear-gradient(90deg, rgba(122,162,255,0.4), transparent);
+  }
+  
+  .branch-left .project-domain {
+    justify-content: flex-start;
+  }
+  
+  .branch-card {
+    padding: 20px;
+  }
+  
+  .project-title {
+    font-size: 1.05rem;
+  }
+  
+  .convergence-section {
+    padding: 60px 16px;
+  }
+  
+  .convergence-card {
+    padding: 30px 20px;
+  }
+  
+  .convergence-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .convergence-card p {
+    font-size: 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0;
+    gap: 16px;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 16px 30px;
+    font-size: 1rem;
+  }
+  
+  .about-section {
+    padding: 60px 16px;
+  }
+  
+  .contact-section {
+    padding: 60px 16px;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer {
+    padding: 30px 16px;
+  }
+  
+  .quick-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .domain-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-image {
+    width: 130px;
+    height: 130px;
+    border-width: 4px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .branch-card {
+    padding: 16px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .domain-card:hover,
+  .branch-card:hover,
+  .expertise-chip:hover,
+  .contact-item:hover,
+  .btn:hover {
+    transform: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-video-container">
+      <video class="hero-video" autoplay loop muted playsinline>
+        <source src="Academic_Website_Hero_Video_Generation.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <img src="Hamedd.jpg" alt="Dr. Hamed Ghane" class="profile-image">
+    <h1>Hamed Ghane</h1>
+    <p class="subtitle">Control Systems Engineer (PhD)</p>
+    <p class="tagline">
+      Model-based control development and real-time, closed-loop systems (Python/MATLAB/Simulink), with validation-driven engineering across complex sensor-driven platforms
+    </p>
+  </div>
+</section>
+
+<!-- Domain Expertise Showcase -->
+<section class="domain-showcase" data-animate>
+  <div class="container">
+    <h2>Control Engineering Across Domains</h2>
+    <p class="domain-subtitle">
+      Every project, every thesis, every industry application — all rooted in control systems engineering principles
+    </p>
+    
+    <div class="domain-grid">
+      <div class="domain-card" data-domain="robotics">
+        <div class="domain-icon">🤖</div>
+        <div class="domain-name">Robotics</div>
+        <div class="domain-count">Welding, BCI Arms</div>
+      </div>
+      
+      <div class="domain-card" data-domain="power">
+        <div class="domain-icon">⚡</div>
+        <div class="domain-name">Power Electronics</div>
+        <div class="domain-count">Converters, Inverters</div>
+      </div>
+      
+      <div class="domain-card" data-domain="aerospace">
+        <div class="domain-icon">🛰️</div>
+        <div class="domain-name">Aerospace</div>
+        <div class="domain-count">ADCS, Satellite</div>
+      </div>
+      
+      <div class="domain-card" data-domain="chemical">
+        <div class="domain-icon">🧪</div>
+        <div class="domain-name">Process Control</div>
+        <div class="domain-count">Chemical Reactions</div>
+      </div>
+      
+      <div class="domain-card" data-domain="nonlinear">
+        <div class="domain-icon">📊</div>
+        <div class="domain-name">Nonlinear Systems</div>
+        <div class="domain-count">Dynamical Analysis</div>
+      </div>
+      
+      <div class="domain-card" data-domain="neurotech">
+        <div class="domain-icon">🧠</div>
+        <div class="domain-name">Neurotech</div>
+        <div class="domain-count">BCI, Neural Interfaces</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline Section with Branches -->
+<section class="timeline-section">
+  <div class="container">
+    
+    <div class="section-header" data-animate>
+      <div class="title-decoration">
+        <div class="title-line"></div>
+        <span class="title-icon">🚀</span>
+        <div class="title-line"></div>
+      </div>
+      <h2 class="timeline-title">
+        <span class="text-gradient">My Journey</span>
+      </h2>
+      <div class="title-underline"></div>
+      <p class="timeline-subtitle">From control engineering foundations to real-time, closed-loop BCI systems</p>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-line">
+        <div class="timeline-line-progress" id="lineProgress"></div>
+      </div>
+      
+      <!-- PERIOD 1: Education (2002-2014) -->
+      <div class="timeline-period" data-animate>
+        <div class="period-header">
+          <div class="period-node"></div>
+          <div class="period-badge">
+            <span class="period-year">2002 – 2014</span>
+            <span class="period-label">Education</span>
+          </div>
+        </div>
+        
+        <div class="project-branches">
+          <!-- Left Branch -->
+          <div class="branch-left">
+            <div class="branch-item">
+              <div class="branch-card" data-domain="robotics">
+                <span class="project-type">BSc Thesis</span>
+                <div class="project-title">Welding Robot Control</div>
+                <div class="project-domain">
+                  <span>🤖</span> Robotics & Automation
+                </div>
+                <div class="project-tools">Industrial robot kinematics, trajectory planning, control system design</div>
+              </div>
+            </div>
+            
+            <div class="branch-item">
+              <div class="branch-card" data-domain="power">
+                <span class="project-type">MSc Thesis</span>
+                <div class="project-title">Power Electronic Control</div>
+                <div class="project-domain">
+                  <span>⚡</span> Power Electronics
+                </div>
+                <div class="project-tools">Switching control, converter design, MATLAB/Simulink modeling</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Branch -->
+          <div class="branch-right">
+            <div class="branch-item">
+              <div class="branch-card" data-domain="nonlinear">
+                <span class="project-type">PhD Thesis</span>
+                <div class="project-title">Nonlinear Dynamical Systems</div>
+                <div class="project-domain">
+                  <span>📊</span> Nonlinear Control Theory
+                </div>
+                <div class="project-tools">Chaos analysis, stability theory, bifurcation analysis, system dynamics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- PERIOD 2: Academia (2014-2022) -->
+      <div class="timeline-period" data-animate>
+        <div class="period-header">
+          <div class="period-node"></div>
+          <div class="period-badge">
+            <span class="period-year">2014 – 2022</span>
+            <span class="period-label">Academia & Industry</span>
+          </div>
+        </div>
+        
+        <div class="project-branches">
+          <!-- Left Branch -->
+          <div class="branch-left">
+            <div class="branch-item">
+              <div class="branch-card" data-domain="chemical">
+                <span class="project-type">Sabbatical Research</span>
+                <div class="project-title">Chemical Reaction Control</div>
+                <div class="project-domain">
+                  <span>🧪</span> Process Control
+                </div>
+                <div class="project-tools">Reaction kinetics modeling, PID optimization, process control systems</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Branch -->
+          <div class="branch-right">
+            <div class="branch-item">
+              <div class="branch-card" data-domain="aerospace">
+                <span class="project-type">Industry Project</span>
+                <div class="project-title">Satellite ADCS Control</div>
+                <div class="project-domain">
+                  <span>🛰️</span> Aerospace Systems
+                </div>
+                <div class="project-tools">Attitude determination, Kalman filtering, quaternion control algorithms</div>
+              </div>
+            </div>
+            
+            <div class="branch-item">
+              <div class="branch-card" data-domain="automation">
+                <span class="project-type">Industrial Projects</span>
+                <div class="project-title">PLC/TDCS Automation</div>
+                <div class="project-domain">
+                  <span>🏭</span> Industrial Control
+                </div>
+                <div class="project-tools">PLC programming, SCADA systems, industrial automation architecture</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- PERIOD 3: BCI Pivot (2022-2024) -->
+      <div class="timeline-period" data-animate>
+        <div class="period-header">
+          <div class="period-node"></div>
+          <div class="period-badge">
+            <span class="period-year">2022 – 2024</span>
+            <span class="period-label">BCI Pivot</span>
+          </div>
+        </div>
+        
+        <div class="project-branches">
+          <!-- Left Branch -->
+          <div class="branch-left">
+            <div class="branch-item">
+              <div class="branch-card" data-domain="neurotech">
+                <span class="project-type">Supervised Work</span>
+                <div class="project-title">BCI Robotic Arm Control</div>
+                <div class="project-domain">
+                  <span>🧠</span> Brain-Computer Interface
+                </div>
+                <div class="project-tools">EEG signal processing, motor imagery classification, robotic control integration</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Branch -->
+          <div class="branch-right">
+            <div class="branch-item">
+              <div class="branch-card" data-domain="neurotech">
+                <span class="project-type">2nd MSc Thesis</span>
+                <div class="project-title">Intention Detection BCI</div>
+                <div class="project-domain">
+                  <span>🎯</span> Decision Neuroscience
+                </div>
+                <div class="project-tools">Real-time EEG, closed-loop BCI, neural decoding algorithms</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- PERIOD 4: Current (2024-Present) -->
+      <div class="timeline-period current" data-animate>
+        <div class="period-header">
+          <div class="period-node"></div>
+          <div class="period-badge">
+            <span class="period-year">2024 – Present</span>
+            <span class="period-label">Research Associate</span>
+          </div>
+        </div>
+        
+        <div class="project-branches">
+          <div class="branch-right" style="grid-column: 1 / -1; text-align: center; padding: 0;">
+            <div class="branch-item">
+              <a href="https://mphiliastides.org/en/team/hamed-ghane" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                <div class="branch-card" data-domain="neurotech" style="max-width: 700px; margin: 0 auto;">
+                  <span class="project-type">University of Glasgow</span>
+                  <div class="project-title">Multi-Modal BCI Platform</div>
+                  <div class="project-domain" style="justify-content: center;">
+                    <span>🧠</span> Real-Time Neural Interfaces
+                  </div>
+                  <div class="project-tools">
+                    Hardware-synchronized EEG/EMG/ECG • Lab Streaming Layer • Closed-loop control • 
+                    Sub-millisecond timing • Decision-making research
+                  </div>
+                  <div class="current-badge">Currently Here</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Convergence Message -->
+<section class="convergence-section" data-animate>
+  <div class="container">
+    <h2 class="timeline-title" style="margin-bottom: 10px;">
+      <span class="text-gradient">All Roads Lead Here</span>
+    </h2>
+    <div class="convergence-arrow">⬇</div>
+    <div class="convergence-card">
+      <h3>Control Engineering Foundation → Neurotech Applications</h3>
+      <p>
+        Every domain I've worked in—from power electronics to satellite control to chemical processes—
+        was fundamentally about <strong>control systems engineering</strong>. Now, I'm applying 
+        those same principles to the most complex control system of all: <strong>the human brain</strong>.
+      </p>
+      <p style="margin-top: 20px;">
+        Real-time closed-loop BCI is control engineering applied to neural systems—
+        combining signal processing, state estimation, feedback control, and hardware synchronization 
+        to create seamless human-machine interfaces.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Buttons -->
+<div class="cta-buttons" data-animate>
+  <a href="https://hamedghanes.github.io/Neurotech/" class="btn btn-primary">
+    View Selected (Neurotech) Projects
+  </a>
+  <a href="https://github.com/HamedGhaneS/Neurotech/raw/main/assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+    Download CV
+  </a>
+</div>
+
+<!-- About Section -->
+<section class="about-section" data-animate>
+  <div class="about-content">
+    <h3>About Me</h3>
+    <p>
+      I'm a control systems engineer with a control-engineering foundation, building model-based, real-time closed-loop systems and validation pipelines in Python, MATLAB, and Simulink.
+    </p>
+    <p>
+      In recent years I've applied the same engineering approach in neurotechnology, developing low-latency pipelines for EEG/EMG/ECG and closed-loop experiments.
+    </p>
+    <div class="expertise-chips">
+      <span class="expertise-chip">🎯 Control System Design</span>
+      <span class="expertise-chip">🧪 MiL/SiL/HiL Validation</span>
+      <span class="expertise-chip">🤖 Real-time Closed-loop Systems</span>
+      <span class="expertise-chip">📊 Python/MATLAB/Simulink</span>
+      <span class="expertise-chip">⚡ Sensor Fusion & Estimation</span>
+      <span class="expertise-chip">🧠 Neural Interfaces (Applied Domain)</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" data-animate>
+  <div class="contact-content">
+    <h3>Get in Touch</h3>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <h4>📧 Email</h4>
+        <p><a href="mailto:hmd.ghane.s@gmail.com">hmd.ghane.s@gmail.com</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>💼 LinkedIn</h4>
+        <p><a href="https://linkedin.com/in/hamedghane" target="_blank" rel="noopener noreferrer">linkedin.com/in/hamedghane</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>💻 GitHub</h4>
+        <p><a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener noreferrer">github.com/HamedGhaneS</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="quick-links">
+    <a href="https://linkedin.com/in/hamedghane" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://hamedghanes.github.io/Neurotech/" target="_blank" rel="noopener noreferrer">Research Projects</a>
+  </div>
+</footer>
+
+<script>
+/**
+ * Enhanced Portfolio Animation Controller with Branching Timeline
+ * Author: Hamed Ghane
+ * Date: February 8, 2026
+ * 
+ * Description: Manages scroll-triggered animations for timeline periods,
+ * project branches, domain cards, and section reveals. Implements 
+ * IntersectionObserver for performance-optimized visibility detection
+ * and interactive domain filtering.
+ * 
+ * Input: User scroll events, viewport intersections, domain card clicks
+ * Output: Animated timeline with staggered branch reveals, highlighted
+ * domain-specific projects, progressive line fill
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // Cache DOM elements
+  const animatedElements = document.querySelectorAll('[data-animate]');
+  const lineProgress = document.getElementById('lineProgress');
+  const domainCards = document.querySelectorAll('.domain-card');
+  
+  // Detect mobile device
+  const isMobile = window.innerWidth <= 768;
+  
+  // IntersectionObserver for all animated sections
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: isMobile ? 0.1 : 0.2,
+    rootMargin: '-30px 0px'
+  });
+  
+  // Observe all animated elements
+  animatedElements.forEach(element => sectionObserver.observe(element));
+  
+  // Domain card interaction - highlight matching projects
+  domainCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const domain = card.dataset.domain;
+      const isActive = card.classList.contains('active');
+      
+      // Toggle active state
+      card.classList.toggle('active');
+      
+      // Find and highlight matching branch cards
+      const matchingBranches = document.querySelectorAll(`.branch-card[data-domain="${domain}"]`);
+      
+      matchingBranches.forEach(branch => {
+        if (!isActive) {
+          // Highlight
+          branch.style.borderColor = 'rgba(122,162,255,0.8)';
+          branch.style.transform = 'translateY(-5px) scale(1.02)';
+          branch.style.boxShadow = '0 15px 45px rgba(122,162,255,0.3)';
+          branch.style.background = 'rgba(122,162,255,0.15)';
+        } else {
+          // Reset
+          branch.style.borderColor = '';
+          branch.style.transform = '';
+          branch.style.boxShadow = '';
+          branch.style.background = '';
+        }
+      });
+    });
+  });
+  
+  // Throttled scroll handler for line progress
+  let ticking = false;
+  
+  function updateLineProgress() {
+    const timelineSection = document.querySelector('.timeline-section');
+    const timeline = document.querySelector('.timeline');
+    
+    if (!timelineSection || !timeline) {
+      ticking = false;
+      return;
+    }
+    
+    const sectionRect = timelineSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    // Calculate progress through timeline
+    const timelineStart = sectionRect.top;
+    const timelineEnd = sectionRect.bottom - windowHeight;
+    const scrollRange = timelineEnd - timelineStart;
+    
+    let progress = 0;
+    if (timelineStart <= 0 && scrollRange > 0) {
+      progress = Math.min(100, Math.max(0, (-timelineStart / scrollRange) * 100));
+    }
+    
+    if (lineProgress) {
+      lineProgress.style.height = `${progress}%`;
+    }
+    
+    ticking = false;
+  }
+  
+  // Passive scroll listener for better performance
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateLineProgress);
+      ticking = true;
+    }
+  }, { passive: true });
+  
+  // Handle resize events
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      updateLineProgress();
+    }, 250);
+  }, { passive: true });
+  
+  // Initial call
+  updateLineProgress();
+  
+});
+</script>
+
+</body>
+</html>
